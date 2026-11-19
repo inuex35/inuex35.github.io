@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="井上航輔のポートフォリオ。自己位置推定、ロボティクス、3D再構成。">
+<title>井上 航輔 | ロボティクス・自己位置推定</title>
+<style>
+:root{color-scheme:light;--ink:#16253b;--muted:#45556f;--blue:#194ea9;--line:#dae4f0;--tint:#eef4ff}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:#fff;font:1rem/1.75 system-ui,-apple-system,"Segoe UI","Hiragino Sans",Meiryo,sans-serif;overflow-wrap:anywhere}.wrap{width:min(calc(100% - 2.5rem),68rem);margin:auto}a{color:var(--blue);text-underline-offset:.22em}a:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+.top,footer{border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center;padding:1rem 0}.top span{font-weight:800}.top a,footer{font-size:.88rem}
+.intro{padding:clamp(2.2rem,7vw,5rem) 0 clamp(2rem,5vw,3.5rem)}.label{color:var(--blue);font-size:.76rem;font-weight:780;letter-spacing:.11em;margin:0}
+h1{font-size:clamp(2.5rem,8.5vw,4.5rem);line-height:1.1;margin:.35rem 0 .3rem;letter-spacing:.02em}.roman,.intro p:last-child{color:var(--muted);margin:.6rem 0 0}.roman{font-weight:650}.intro p:last-child{max-width:42rem;font-size:clamp(1rem,2vw,1.16rem)}
+.feature{padding:clamp(1.15rem,4vw,2.5rem);border:1px solid #cbdcf7;border-radius:1rem;background:var(--tint);display:grid;grid-template-columns:minmax(0,1fr) minmax(13rem,.58fr);gap:1.55rem;align-items:center}h2,h3{line-height:1.37;margin:.4rem 0 .65rem}h2{font-size:clamp(1.4rem,3.6vw,2rem)}h3{font-size:1.16rem}.feature p,.card p{margin:.25rem 0 .75rem}.links{display:flex;gap:.6rem 1rem;flex-wrap:wrap;align-items:center;margin:1rem 0}.primary{background:var(--blue);color:#fff;text-decoration:none;border-radius:.45rem;padding:.55rem .85rem;font-weight:730}.primary:hover{text-decoration:underline}.award{color:var(--muted);font-size:.87rem}
+figure{margin:0}svg{width:100%;height:auto;display:block}figcaption{text-align:center;color:var(--muted);font-size:.76rem}.more{padding:clamp(2.1rem,6vw,4.1rem) 0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1.2rem}.card{border-top:2px solid #afc5e8;padding:1rem 0}.card p{color:var(--muted)}.card a{display:inline-block;margin-right:.6rem;font-size:.9rem}footer{border-top:1px solid var(--line);border-bottom:0;color:var(--muted);padding-bottom:2.3rem}
+@media(max-width:720px){.feature,.grid{grid-template-columns:1fr}.feature{gap:.95rem}.grid{gap:.5rem}figure{width:min(100%,22rem);margin-inline:auto}}
+</style>
+</head>
+<body><div class="wrap">
+<header class="top"><span>井上 航輔</span><a href="https://github.com/inuex35">GitHub · inuex35</a></header>
+<main>
+<section class="intro" aria-labelledby="title">
+<p class="label">ROBOTICS / LOCALIZATION</p><h1 id="title">井上 航輔</h1>
+<p class="roman" lang="en">Kosuke Inoue</p>
+<p>自動運転車や移動ロボットの自己位置推定を開発しています。センサーの選定・評価から、推定アルゴリズムの実装、実車での運用まで取り組んできました。</p>
+</section>
+<section class="feature" aria-labelledby="rtk"><div>
+<p class="label">01 · 代表実績</p>
+<h2 id="rtk">RTK-GNSSとIMUの密結合による自己位置推定</h2>
+<p>擬似距離・搬送波位相の二重差観測とIMUを同じ因子グラフで統合する推定器を開発。RTK用の二重差因子をGTSAM本体に追加し、東京の都市部走行データで推定器を評価しました。</p>
+<div class="links"><a class="primary" href="https://gtsam.org/2026/06/10/rtk-gnss-double-difference.html">GTSAM公式ブログ（本人執筆）</a><a href="https://github.com/inuex35/tightly-coupled-gnss-imu-fgo">公開コード</a></div>
+<p class="award">関連実績：<a href="https://www.denshi.e.kaiyodai.ac.jp/challenge/">高精度測位チャレンジ2024 1位</a></p></div>
+<figure><svg viewBox="0 0 328 146" role="img" aria-labelledby="fig">
+<title id="fig">GNSS二重差観測が各時刻の姿勢に結び付き、隣接する姿勢をIMU因子がつなぐ概念図</title>
+<rect x="1" y="1" width="326" height="144" rx="13" fill="#fff" stroke="#cad9ef"/>
+<text x="164" y="26" text-anchor="middle" fill="#194ea9" font-size="13" font-weight="700">GNSS 二重差観測</text>
+<g stroke="#769bd8" stroke-width="2"><path d="M58 53v34m106-34v34m106-34v34"/><path d="M67 96h88m18 0h88" stroke-dasharray="4 4"/></g>
+<g fill="#4f78bd"><rect x="52" y="41" width="12" height="12" rx="2"/><rect x="158" y="41" width="12" height="12" rx="2"/><rect x="264" y="41" width="12" height="12" rx="2"/></g>
+<g fill="#194ea9"><circle cx="58" cy="96" r="9"/><circle cx="164" cy="96" r="9"/><circle cx="270" cy="96" r="9"/></g>
+<text x="164" y="125" text-anchor="middle" fill="#45556f" font-size="12">各時刻の姿勢を IMU 因子で接続</text>
+</svg><figcaption>密結合の概念図</figcaption></figure>
+</section>
+<section class="more" aria-labelledby="work"><p class="label">SELECTED WORK</p><h2 id="work">その他の実績</h2>
+<div class="grid"><article class="card"><p class="label">02 · 実務</p><h3>実車向け自己位置推定プラットフォーム</h3><p>RTK-GNSS・IMU・車速を使う自己位置推定システムを開発。センサーの選定・評価、車両への取り付けとキャリブレーション、リアルタイム処理と後処理を担当しました。</p></article>
+<article class="card"><p class="label">03 · 研究</p><h3>樹園地の自律草刈りロボット</h3><p>RGB-DカメラとIMUを用いた自己位置推定に加え、障害物回避や自律走行に取り組みました。</p><a href="https://www.bme.en.a.u-tokyo.ac.jp/Japanese/thesis/thesis03.html">東京大学の修士論文一覧</a></article>
+<article class="card"><p class="label">04 · OSS</p><h3>360°画像からの3D再構成</h3><p>360°カメラ画像からOpenSfMで点群を生成し、3D Gaussian Splattingの学習までつなげる処理を開発・公開しました。</p><a href="https://github.com/inuex35/360-gaussian-splatting">360-gaussian-splatting</a> <a href="https://github.com/inuex35/splat_one">関連: splat_one</a></article></div>
+</section></main>
+<footer><span>井上 航輔 · Robotics / Localization</span><a href="https://github.com/inuex35">GitHub</a></footer>
+</div></body>
+</html>
